@@ -35,6 +35,7 @@ form.addEventListener("submit", function(e) {
 
     this.reset();
     calcularPromedio();
+    actualizarEstadisticas();
 });
 
 function addStudentToTable(student) {
@@ -73,6 +74,7 @@ function deleteEstudiante(student, row) {
         students.splice(index, 1);
         row.remove();
         calcularPromedio();
+        actualizarEstadisticas();
     }
 }
 
@@ -98,9 +100,24 @@ function calcularPromedio() {
     }
 }
 
+function actualizarEstadisticas() {
+    const total = students.length;
+    const aprobados = students.filter(est => est.grade >= 4.0).length;
+    const reprobados = total - aprobados;
+
+    const statsDiv = document.getElementById("stats");
+    statsDiv.innerHTML = `
+        <p>Total de Estudiantes: ${total}</p>
+        <p>Cantidad de Aprobados: ${aprobados}</p>
+        <p>Cantidad de Reprobados: ${reprobados}</p>
+    `;
+}
+
 function updateTable() {
     tableBody.innerHTML = "";
     students.forEach(student => {
         addStudentToTable(student);
     });
+    calcularPromedio();          
+    actualizarEstadisticas();
 }

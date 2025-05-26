@@ -1,7 +1,7 @@
 form{
     text-align: center;
     margin: auto;
-    border: 2px blue solid;
+    border: 2px rgb(0, 0, 0) solid;
     padding: 20px;
     width: 450px;
     border-radius: 25px;
@@ -16,15 +16,15 @@ h2{
 
 #average{
     text-align: center;
-    border: 2px blue solid;
-    color: blue;
+    border: 2px rgb(67, 82, 2) solid;
+    color: rgb(0, 0, 0);
     width: 450px;
     margin: auto;
     padding: 10px;
     margin-bottom: 40px;
     margin-top: 40px;
     font-size: x-large;
-    background: rgb(204, 250, 250);
+    background: rgb(255, 255, 255);
 }
 
 input{
@@ -47,7 +47,7 @@ button{
     margin: 15px;
     display: flex;
     padding: 10px;
-    background: blue;
+    background: rgb(0, 0, 0);
     color: white;
     border-radius: 10px;
 }
@@ -106,4 +106,15 @@ td{
     #average {
         font-size: 20px;
     }
+}
+#stats {
+    text-align: center;
+    width: 450px;
+    margin: auto;
+    padding: 10px;
+    font-size: large;
+    background: rgb(240, 240, 250);
+    border: 2px solid gray;
+    border-radius: 10px;
+    margin-bottom: 30px;
 }
